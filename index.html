@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>PA#1</title>
+   <style>
+      body {
+         background-color: #EEEEEE;
+      }
+      .controls {
+         margin: 20px 0;
+         padding: 15px;
+         background-color: #fff;
+         border-radius: 5px;
+         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .slider-container {
+         margin: 10px 0;
+      }
+      .slider-container label {
+         display: inline-block;
+         width: 120px;
+         margin-right: 10px;
+      }
+      input[type="range"] {
+         width: 200px;
+         vertical-align: middle;
+      }
+      #canvas-holder {
+         margin-top: 20px;
+      }
+   </style>
+
+   <script src="./Utils/trackball-rotator.js"></script>
+   <script src="./Utils/m4.js"></script>
+   <script src="./shader.gpu"></script>
+   <script src="./main.js"></script>
+</head>
+<body onload="init()">
+<h2>A Cube with "Trackball" Mouse Rotation</h2>
+
+<p id="message">Drag your mouse on the cube to rotate it.<br>
+   (On a touch screen, you can use your finger.)</p>
+
+<div class="controls">
+   <div class="slider-container">
+      <label for="uGranularity">U Granularity:</label>
+      <input type="range" id="uGranularity" min="10" max="100" value="72" step="1">
+      <span id="uValue">72</span>
+   </div>
+   <div class="slider-container">
+      <label for="vGranularity">V Granularity:</label>
+      <input type="range" id="vGranularity" min="5" max="50" value="20" step="1">
+      <span id="vValue">20</span>
+   </div>
+</div>
+
+<div id="canvas-holder">
+   <canvas width="700" height="700" id="webglcanvas" style="background-color:red"></canvas>
+</div>
+
+</body>
+</html>
